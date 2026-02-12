@@ -1,24 +1,42 @@
-# react-boilerplate
-My very own barebones react launchpad for future projects.
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+# Affirmation Frontend
 
-## Available Scripts
+## Running Locally
 
-### npm start
+### Prerequisites
 
-Runs the app in the development mode.
-Open http://localhost:8080 to view it in the browser.
+- Node.js (v18 or higher recommended)
+- npm
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
+### Installation
 
-### npm run build
+```bash
+npm install
+```
 
-Builds a static copy of your site to the `build/` folder.
-Your app is ready to be deployed!
+### Development
 
-**For the best production performance:** Add a build bundler plugin like [@snowpack/plugin-webpack](https://github.com/snowpackjs/snowpack/tree/main/plugins/plugin-webpack) or [snowpack-plugin-rollup-bundle](https://github.com/ParamagicDev/snowpack-plugin-rollup-bundle) to your `snowpack.config.mjs` config file.
+Start the development server:
 
-### Q: What about Eject?
+```bash
+npm start
+```
 
-No eject needed! Snowpack guarantees zero lock-in, and CSA strives for the same.
+The app will be available at http://localhost:5173
+
+### Production Build
+
+Create an optimized production build:
+
+```bash
+npm run build
+```
+
+The build output will be in the `dist/` directory.
+
+### Preview Production Build
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
