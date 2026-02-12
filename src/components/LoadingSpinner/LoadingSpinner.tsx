@@ -7,6 +7,9 @@ const LoadingSpinner: React.FC = () => {
       role="status" 
       aria-label="Loading"
     >
+      <span className="dot"></span>
+      <span className="dot"></span>
+      <span className="dot"></span>
       <span className="visually-hidden">Loading...</span>
     </div>
   );

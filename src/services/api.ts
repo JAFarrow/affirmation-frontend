@@ -58,7 +58,7 @@ export const fetchAffirmation = async (
 
       case 504: {
         throw new ApiError(
-          'TOur service is temporarily unavailable. Please try again in a few moments.',
+          'Our service is temporarily unavailable. Please try again in a few moments.',
           504
         );
       }
