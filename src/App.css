@@ -1,0 +1,415 @@
+/* Main app container */
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  overflow: hidden;
+}
+
+/* Main content container */
+.main-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Content card - glassmorphism effect */
+.content-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-lg);
+  transition: box-shadow var(--transition-normal), padding var(--transition-fast);
+}
+
+.content-card:hover {
+  box-shadow: 0 12px 24px rgba(74, 74, 74, 0.15);
+}
+
+/* Card title */
+.card-title {
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-align: center;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Card subtitle */
+.card-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Form container */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Form group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Form labels */
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.form-label .required {
+  color: var(--color-error);
+  margin-left: var(--spacing-xs);
+}
+
+/* Form inputs base styles */
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: var(--spacing-md);
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--color-text-primary);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+/* Prevent zoom on iOS */
+.form-input,
+.form-select,
+.form-textarea {
+  font-size: 16px;
+}
+
+/* Input hover state */
+.form-input:hover,
+.form-select:hover,
+.form-textarea:hover {
+  border-color: var(--color-blue-soft);
+}
+
+/* Input focus state */
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-blue-soft);
+  box-shadow: 0 0 0 3px rgba(184, 212, 227, 0.3);
+}
+
+/* Select dropdown arrow */
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236B6B6B' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-md) center;
+  padding-right: var(--spacing-2xl);
+  cursor: pointer;
+}
+
+/* Textarea specific */
+.form-textarea {
+  min-height: 80px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* Character counter */
+.character-counter {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  text-align: right;
+  margin-top: var(--spacing-xs);
+}
+
+.character-counter.warning {
+  color: var(--color-error);
+}
+
+/* Submit button */
+.submit-button {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: 16px;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--color-text-secondary);
+  background: linear-gradient(135deg, var(--color-peach) 0%, var(--color-blue-soft) 100%);
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.submit-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-button:focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 2px;
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Validation error messages */
+.error-message {
+  font-size: 13px;
+  color: var(--color-error-text);
+  margin-top: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+/* Input error state */
+.form-input.error,
+.form-select.error,
+.form-textarea.error {
+  border-color: var(--color-error);
+  background-color: var(--color-error-bg);
+}
+
+.form-input.error:focus,
+.form-select.error:focus,
+.form-textarea.error:focus {
+  box-shadow: 0 0 0 3px rgba(229, 115, 115, 0.2);
+}
+
+/* Output box */
+.output-box {
+  min-height: 80px;
+  padding: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.output-box.loading {
+  opacity: 0.7;
+}
+
+.output-box.error {
+  background: var(--color-error-bg);
+  border-color: var(--color-error);
+}
+
+/* Output content */
+.output-content {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.output-content.placeholder {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.output-content.error {
+  color: var(--color-error-text);
+}
+
+/* Loading overlay */
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(2px);
+  border-radius: var(--radius-lg);
+}
+
+/* Header styles */
+.header {
+  text-align: center;
+  padding: var(--spacing-md) 0;
+  flex-shrink: 0;
+}
+
+.header-title {
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.header-subtitle {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-sm);
+  letter-spacing: 1px;
+}
+
+/* Loading spinner */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  background: var(--color-blue-soft);
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Responsive breakpoints */
+
+/* Tablet */
+@media (max-width: 768px) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .app {
+    height: auto;
+    min-height: 100vh;
+    justify-content: flex-start;
+    overflow-y: auto;
+  }
+
+  .main-container {
+    max-width: 90%;
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+  }
+
+  .content-card {
+    padding: var(--spacing-xl);
+  }
+
+  .card-title {
+    font-size: 24px;
+  }
+
+  .header-title {
+    font-size: 28px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .app {
+    padding: var(--spacing-md);
+    height: auto;
+    min-height: 100vh;
+    justify-content: flex-start;
+    overflow-y: auto;
+  }
+
+  .main-container {
+    max-width: 100%;
+    margin: 0;
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+  }
+
+  .content-card {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    max-height: none;
+  }
+
+  .card-title {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+
+  .card-subtitle {
+    font-size: 13px;
+  }
+
+  .form-container {
+    gap: var(--spacing-md);
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    padding: calc(var(--spacing-md) - 2px) var(--spacing-md);
+    min-height: 44px; /* Touch-friendly */
+  }
+
+  .submit-button {
+    min-height: 44px; /* Touch-friendly */
+  }
+
+  .header {
+    padding: var(--spacing-md) 0;
+  }
+
+  .header-title {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  .output-box {
+    min-height: 60px;
+    max-height: 150px;
+    overflow-y: auto;
+  }
+
+  .output-content {
+    font-size: 16px;
+  }
+}
+
+/* Safe area support for notched devices */
+@supports (padding: max(0px)) {
+  .app {
+    padding-left: max(var(--spacing-md), env(safe-area-inset-left));
+    padding-right: max(var(--spacing-md), env(safe-area-inset-right));
+    padding-bottom: max(var(--spacing-md), env(safe-area-inset-bottom));
+  }
+}

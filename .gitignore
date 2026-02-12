@@ -24,3 +24,6 @@ Thumbs.db
 
 # Old snowpack (deprecated)
 .snowpack
+
+# opencode specific files
+.opencode
