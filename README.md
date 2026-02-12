@@ -1,42 +1,94 @@
-# Affirmation Frontend
+# Affirmation — Frontend
 
-## Running Locally
+LIVE: https://affirmation-frontend-zeta.vercel.app/
 
-### Prerequisites
+Frontend for the **Live Mood Architect** technical challenge.  
+Built with **React + Vite + TypeScript** and deployed on **Vercel**.  
+This app provides a simple UI for users to submit their name and mood and receive a personalized affirmation from the backend AI service.
 
-- Node.js (v18 or higher recommended)
-- npm
+---
 
-### Installation
+# Tech Stack
+
+- React
+- TypeScript
+- Vite
+
+---
+
+# Local Development
+
+## 1. Clone the repository
+
+```bash
+git clone https://github.com/JAFarrow/affirmation-frontend.git
+cd affirmation-frontend
+```
+
+## 2. Install dependencies
 
 ```bash
 npm install
 ```
 
-### Development
+## 3. Environment Variables
 
-Start the development server:
+Create a `.env` file in the project root:
 
 ```bash
-npm start
+VITE_API_BASE_URL=http://localhost:5000
 ```
 
-The app will be available at http://localhost:5173
+### Required Variables
 
-### Production Build
+- `VITE_API_BASE_URL` — Base URL of the backend API
 
-Create an optimized production build:
+**Important:**
+
+- Do not commit `.env` files
+- Only variables prefixed with `VITE_` are exposed to the browser
+
+---
+
+## 4. Run Development Server
+
+```bash
+npm run dev
+```
+
+Default dev URL:
+
+```
+http://localhost:5173
+```
+
+---
+
+# Production Build
 
 ```bash
 npm run build
 ```
 
-The build output will be in the `dist/` directory.
-
-### Preview Production Build
-
-Preview the production build locally:
+Preview production build locally:
 
 ```bash
 npm run preview
 ```
+
+---
+
+# Deployment — Vercel
+
+## Steps
+
+1. Push repository to GitHub
+2. Import project into Vercel
+3. Framework preset: **Vite**
+4. Set environment variables in Vercel project settings:
+
+```
+VITE_API_BASE_URL=<YOUR_BACKEND_PUBLIC_URL>
+```
+
+5. Deploy
