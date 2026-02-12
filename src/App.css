@@ -1,12 +1,12 @@
 /* Main app container */
 .app {
-  height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: var(--spacing-md);
-  overflow: hidden;
+  justify-content: flex-start;
+  padding: var(--spacing-lg);
+  padding-bottom: max(var(--spacing-lg), env(safe-area-inset-bottom));
 }
 
 /* Main content container */
@@ -319,27 +319,17 @@
 
 /* Tablet */
 @media (max-width: 768px) {
-  body {
-    height: auto;
-    min-height: 100vh;
-    overflow-y: auto;
-  }
-
   .app {
-    height: auto;
-    min-height: 100vh;
-    justify-content: flex-start;
-    overflow-y: auto;
+    padding: var(--spacing-lg);
+    padding-bottom: max(var(--spacing-lg), env(safe-area-inset-bottom));
   }
 
   .main-container {
     max-width: 90%;
-    padding-top: var(--spacing-lg);
-    padding-bottom: var(--spacing-lg);
   }
 
   .content-card {
-    padding: var(--spacing-xl);
+    padding: var(--spacing-lg);
   }
 
   .card-title {
@@ -353,31 +343,18 @@
 
 /* Mobile */
 @media (max-width: 480px) {
-  body {
-    height: auto;
-    min-height: 100vh;
-    overflow-y: auto;
-  }
-
   .app {
     padding: var(--spacing-md);
-    height: auto;
-    min-height: 100vh;
-    justify-content: flex-start;
-    overflow-y: auto;
+    padding-bottom: max(var(--spacing-md), env(safe-area-inset-bottom));
   }
 
   .main-container {
     max-width: 100%;
-    margin: 0;
-    padding-top: var(--spacing-md);
-    padding-bottom: var(--spacing-md);
   }
 
   .content-card {
-    padding: var(--spacing-sm);
+    padding: var(--spacing-md);
     border-radius: var(--radius-lg);
-    max-height: none;
   }
 
   .card-title {
@@ -397,11 +374,11 @@
   .form-select,
   .form-textarea {
     padding: calc(var(--spacing-md) - 2px) var(--spacing-md);
-    min-height: 44px; /* Touch-friendly */
+    min-height: 44px;
   }
 
   .submit-button {
-    min-height: 44px; /* Touch-friendly */
+    min-height: 44px;
   }
 
   .header {
@@ -419,8 +396,6 @@
 
   .output-box {
     min-height: 60px;
-    max-height: 50vh;
-    overflow-y: auto;
   }
 
   .output-content {
@@ -431,8 +406,7 @@
 /* Safe area support for notched devices */
 @supports (padding: max(0px)) {
   .app {
-    padding-left: max(var(--spacing-md), env(safe-area-inset-left));
-    padding-right: max(var(--spacing-md), env(safe-area-inset-right));
-    padding-bottom: max(var(--spacing-md), env(safe-area-inset-bottom));
+    padding-left: max(var(--spacing-lg), env(safe-area-inset-left));
+    padding-right: max(var(--spacing-lg), env(safe-area-inset-right));
   }
 }
