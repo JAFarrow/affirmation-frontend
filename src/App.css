@@ -232,6 +232,7 @@
   line-height: 1.6;
   color: var(--color-text-primary);
   text-align: center;
+  white-space: pre-line
 }
 
 .output-content.placeholder {
