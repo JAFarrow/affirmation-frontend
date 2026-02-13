@@ -2,6 +2,8 @@
 
 LIVE: https://affirmation-frontend-zeta.vercel.app/
 
+**NB** First request can take some time as backend cold starts.
+
 Frontend for the **Mood Architect** affirmation project.  
 Built with **React + Vite + TypeScript** and deployed on **Vercel**.  
 This app provides a simple UI for users to submit their name and mood and receive a personalized affirmation from the backend AI service.
