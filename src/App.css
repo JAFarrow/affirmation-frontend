@@ -95,6 +95,13 @@
   touch-action: manipulation;
 }
 
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover,
+.form-input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.9) inset, var(--shadow-sm) !important;
+  -webkit-text-fill-color: inherit !important;
+}
+
 /* Prevent zoom on iOS */
 .form-input,
 .form-select,
